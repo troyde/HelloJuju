@@ -1,17 +1,21 @@
-# Firefox over VNC
-#
-# VERSION               0.1
-# DOCKER-VERSION        0.2
+FROM       ubuntu:14.04
+FROM       python:3
 
-from	ubuntu:12.04
-# make sure the package repository is up to date
-run	echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-run	apt-get update
+MAINTAINER Troy De Souza "https://github.com/troyde”
+RUN apt-get update
+RUN pip install django
+RUN apt-get install -y openssh-server
+RUN mkdir /var/run/sshd
+RUN echo 'root:Esoteric$' | chpasswd
+RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-# Install vnc, xvfb in order to create a 'fake' display and firefox
-run	apt-get install -y x11vnc xvfb firefox
-run	mkdir /.vnc
-# Setup a password
-run	x11vnc -storepasswd 1234 ~/.vnc/passwd
-# Autostart firefox (might not be the best way to do it, but it does the trick)
-run	bash -c 'echo "firefox" >> /.bashrc'
+# SSH login fix. Otherwise user is kicked off after login
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+
+ENV NOTVISIBLE "in users profile"
+RUN echo "export VISIBLE=now" >> /etc/profile
+
+EXPOSE 22
+
+
+CMD    ["/usr/sbin/sshd", "-D"]
