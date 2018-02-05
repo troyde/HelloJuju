@@ -4,6 +4,7 @@ FROM       python:3
 MAINTAINER Troy De Souza "https://github.com/troyde”
 RUN apt-get update
 RUN pip install django
+RUN pip install nano
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'root:Esoteric$' | chpasswd
@@ -22,6 +23,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 #WORKDIR /newfolder
 
 RUN django-admin startproject helloapp
+
 ADD settings.py /
 
 EXPOSE 22
