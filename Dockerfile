@@ -22,7 +22,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 #WORKDIR /newfolder
 
 RUN django-admin startproject helloapp
-
+ADD settings.py /
 
 EXPOSE 22
 
