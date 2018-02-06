@@ -24,7 +24,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 RUN django-admin startproject helloapp
 
-ADD settings.py /
+ADD settings2.py /helloapp/helloapp/
 
 EXPOSE 22
 
