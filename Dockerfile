@@ -4,7 +4,7 @@ FROM       python:3
 MAINTAINER Troy De Souza "https://github.com/troyde”
 RUN apt-get update
 RUN pip install django
-RUN pip install nano
+RUN pip install dj-database-url
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'root:Esoteric$' | chpasswd
