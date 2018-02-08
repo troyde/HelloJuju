@@ -30,6 +30,7 @@ RUN  manage.py startapp testapp
 
 
 #Adding custom settings.py
+
 ADD settings.py /helloapp/helloapp/
 
 EXPOSE 22
