@@ -26,7 +26,7 @@ RUN django-admin startproject helloapp
 
 WORKDIR "/helloapp"
 
-RUN  manage.py startapp testapp
+RUN  /helloapp/manage.py startapp testapp
 
 
 #Adding custom settings.py
