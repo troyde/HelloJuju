@@ -2,8 +2,6 @@
 import os
 BASE_DIR = os.path.dirname(__file__)
 
-import dj_database_url
-from project_runpy import env
 
 
 SECRET_KEY = env.get('SECRET_KEY', 'Rotom')
