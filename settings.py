@@ -40,11 +40,6 @@ ROOT_URLCONF = '{{ project_name }}.urls'
 WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/dev/ref/settings/#databases
-
-DATABASES = {'default': dj_database_url.config(default='sqlite:///{{ project_name }}.db')}
-
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
