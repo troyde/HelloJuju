@@ -4,9 +4,6 @@ BASE_DIR = os.path.dirname(__file__)
 
 
 
-SECRET_KEY = env.get('SECRET_KEY', 'Rotom')
-DEBUG = env.get('DEBUG', False)
-
 ALLOWED_HOSTS = ['*']
 
 
