@@ -1,6 +1,6 @@
 FROM       ubuntu:14.04
 FROM       python:3
-
+FROM       Mysql:5.6
 MAINTAINER Troy De Souza "https://github.com/troyde”
 RUN apt-get update
 RUN pip install django
