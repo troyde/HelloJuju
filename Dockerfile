@@ -1,10 +1,16 @@
 FROM       ubuntu:14.04
 FROM       python:3
-FROM       mysql:5.6
+#FROM       mysql:5.6
+
+
 MAINTAINER Troy De Souza "https://github.com/troyde”
+
+
 RUN apt-get update
+
 RUN pip install django
 RUN pip install dj-database-url
+
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'root:Esoteric$' | chpasswd
