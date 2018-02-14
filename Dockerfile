@@ -1,6 +1,5 @@
 FROM       ubuntu:14.04
 FROM       python:3
-FROM       mysql:5
 
 
 MAINTAINER Troy De Souza "https://github.com/troyde”
@@ -10,6 +9,10 @@ RUN apt-get update
 
 RUN pip install django
 RUN pip install dj-database-url
+
+
+FROM mysql:5
+
 
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
@@ -24,7 +27,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 #Running Django directories
 #RUN mkdir -p /hello
-#RUN chown newuser /newfolder
+#RUN chown newuser /newfolder√
 #USER newuser
 #WORKDIR /newfolder
 
