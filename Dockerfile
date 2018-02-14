@@ -1,6 +1,6 @@
 FROM       ubuntu:14.04
 FROM       python:3
-#FROM       mysql:5.6
+FROM       mysql:5
 
 
 MAINTAINER Troy De Souza "https://github.com/troyde”
