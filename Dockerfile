@@ -20,7 +20,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 #WORKDIR /newfolder
 RUN django-admin startproject helloapp
 WORKDIR "/helloapp"
-RUN  /helloapp/manage.py startapp testapp
+RUN  /helloapp/manage.py startapp howdy
 #Adding custom settings.py
 ADD settings.py /helloapp/helloapp/
 EXPOSE 22
