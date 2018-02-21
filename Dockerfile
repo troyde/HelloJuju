@@ -23,6 +23,6 @@ WORKDIR "/helloapp"
 RUN  /helloapp/manage.py startapp howdy
 #Adding custom settings.py
 ADD settings.py /helloapp/helloapp/
-EXPOSE 8001
+EXPOSE 8000
 CMD    ["/usr/sbin/sshd", "-D"]
 
