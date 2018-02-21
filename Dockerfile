@@ -25,4 +25,4 @@ RUN  /helloapp/manage.py startapp howdy
 ADD settings.py /helloapp/helloapp/
 EXPOSE 8000
 CMD    ["/usr/sbin/sshd", "-D"]
-RUN python manage.py runserver
+
